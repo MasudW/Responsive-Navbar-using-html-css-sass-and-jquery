@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500&display=swap');
+
+/* ------------ short way ----------- */
+$sarabon: 'Sarabun', sans-serif;
+$black: #000;
+$white: #fff;
+$oranged: #ff8800;
+$blue: #00d86c;
+
+/* -------------- start ------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-shadow: none !important;
+    box-sizing: border-box;
+}
+body{
+    font-family: $sarabon !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    background-color: #46b4904f;
+}
+.header-area{
+    background-color: #142440;
+    width: 100%;
+    padding: 12px 30px;
+    border-bottom: #909090ad;
+
+    .header-container{
+        width: 100%;
+        margin: auto;
+        display: table;
+
+        .site-logo{
+            float: left;
+            padding: 10px 0;
+
+            a img{
+                width: 150px;
+            }
+        }
+        .mobile-nav{
+            color: $white;
+            float: right;
+            display: none;
+        }
+        .site-nav-menu{
+            float: right;
+
+            .primary-menu{
+                list-style: none;
+
+                li{
+                    display: inline-block;
+                    color: $white;
+                    margin: 21px 5px;
+
+                    a{
+                        color: $white;
+                        position: relative;
+                        text-decoration: none;
+                        font-weight: 500 !important;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        padding: 15px 10px ;
+                        transition: .5s;
+
+
+                        &:hover, .active{
+                            color: $oranged;
+                        }
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 0;
+                            height: 2px;
+                            background-color: $oranged;
+                            transition: .5s;
+                        }
+                        &:hover::after{
+                            width: 100%;
+                        }
+                    }
+                    .active{
+                        color: $oranged;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ----------- Responsive ----------- */
+@media (max-width:700px){
+    .site-nav-menu{
+        float: none;
+        position: absolute;
+        background-color: #142440;
+        width: 100%;
+        left: 0;
+        top: 70px;
+        padding: 30px 0 150px 0;
+        border-top: 1px solid #4a4848;
+        clip-path: circle(0% at 100% 0%);
+        transition: all .5s;
+
+        .primary-menu li{
+            display: block !important;
+            text-align: center;
+            margin: 25px 2px !important;
+
+            a::after{
+                display: none;
+            }
+        }
+    }
+    .mobile-nav{
+        display: block !important;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .site-logo{
+        padding-bottom: 10px;
+
+        img{
+            width: 140px !important;
+        }
+    }
+    .fa-times{
+        transform: skew(-180deg) rotate(-180deg);
+        transition: .2s;
+    }
+    .mobile-menu-show{
+        clip-path: circle(120% at 100% -20%);
+    }
+}
