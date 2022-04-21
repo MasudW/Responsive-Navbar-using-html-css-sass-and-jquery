@@ -32,6 +32,7 @@ body {
 }
 .header-area .header-container .site-logo a img {
   width: 150px;
+  margin-top: 16px;
 }
 .header-area .header-container .mobile-nav {
   color: #fff;
@@ -79,8 +80,20 @@ body {
   color: #ff8800;
 }
 
+h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #ff8800;
+}
+
 /* ----------- Responsive ----------- */
 @media (max-width: 700px) {
+  .site-logo img {
+    margin-top: -9px !important;
+  }
+
   .site-nav-menu {
     float: none;
     position: absolute;
@@ -106,6 +119,7 @@ body {
     display: block !important;
     margin-top: 10px;
     cursor: pointer;
+    font-size: 18px !important;
   }
 
   .site-logo {

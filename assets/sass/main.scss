@@ -37,6 +37,7 @@ body{
 
             a img{
                 width: 150px;
+                margin-top: 16px;
             }
         }
         .mobile-nav{
@@ -91,9 +92,19 @@ body{
         }
     }
 }
+h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: $oranged;
+}
 
 /* ----------- Responsive ----------- */
 @media (max-width:700px){
+    .site-logo img{
+        margin-top: -9px !important;
+    }
     .site-nav-menu{
         float: none;
         position: absolute;
@@ -120,6 +131,7 @@ body{
         display: block !important;
         margin-top: 10px;
         cursor: pointer;
+        font-size: 18px !important;
     }
     .site-logo{
         padding-bottom: 10px;
